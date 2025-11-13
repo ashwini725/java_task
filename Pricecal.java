@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+#webhook check
 public class Pricecal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
