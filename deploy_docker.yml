@@ -3,7 +3,7 @@
   hosts: docker-host
   become: yes
   vars:
-    docker_image: "your-dockerhub-username/java-app:latest"
+    docker_image: "ashwini725/java-app:latest"
     container_name: "java-app-container"
     container_port: 8080
 
