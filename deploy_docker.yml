@@ -1,0 +1,34 @@
+---
+- name: Deploy Docker Container
+  hosts: docker-host
+  become: yes
+  vars:
+    docker_image: "your-dockerhub-username/java-app:latest"
+    container_name: "java-app-container"
+    container_port: 8080
+
+  tasks:
+    - name: Ensure Docker is installed
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Pull Docker image from Docker Hub
+      community.docker.docker_image:
+        name: "{{ docker_image }}"
+        source: pull
+
+    - name: Stop existing container if running
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        state: absent
+
+    - name: Run Docker container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        image: "{{ docker_image }}"
+        state: started
+        restart_policy: always
+        ports:
+          - "8080:{{ container_port }}"
