@@ -1,6 +1,6 @@
 ---
 - name: Deploy Docker Container
-  hosts: docker-host
+  hosts: docker_host
   become: yes
   vars:
     docker_image: "ashwini725/java-app:latest"
