@@ -7,7 +7,7 @@
     container_name: "java-app-container"
     container_port: 8080
 
-  # tasks:
+  tasks:
   #   - name: Ensure Docker is installed
   #     apt:
   #       name: docker.io
