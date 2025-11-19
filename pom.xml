@@ -37,7 +37,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.example.App</mainClass>
+                                    <mainClass>com.example.Pricecal</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
